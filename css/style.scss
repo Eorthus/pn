@@ -1,0 +1,302 @@
+@import "../scss/variables";
+.container {
+    max-width: 1200px;
+    width: 100%;
+    max-height: 800px;
+    height: 100%;
+    padding: 100px 90px 100px 85px;
+    background: $background;
+}
+.filter {
+    display: flex;
+    font-size: $text_size;
+    .filter-search {
+        max-width: 637px;
+        width: 100%;
+        margin-right: $margin_btn;
+        height: $button_height;
+
+        .input-group-text {
+            background: transparent;
+            border: $input_border;
+            border-right: none;
+        }
+        .form-control {
+            border: $input_border;
+            border-left: none;
+            background: transparent;
+            color: $lowtext_color;
+            padding-left: 5px;
+        }
+    }
+
+    .filter-dropdown {
+        max-width: 190px;
+        width: 100%;
+        height: $button_height;
+        .form-check-label {
+            cursor: pointer;
+        }
+        .dropdown-toggle {
+            &::after {
+                content: "";
+                border: none;
+            }
+        }
+        img {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-menu {
+            transform: translate3d(0px, 38px, 0px) !important;
+            width: 190px;
+            padding-left: 20px;
+            box-shadow: 0px 20px 25px -5px rgba(26, 32, 44, 0.1), 0px 10px 10px -5px rgba(26, 32, 44, 0.04);
+            border-radius: 0;
+            border: none;
+        }
+
+        .btn-secondary {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            color: $text_color;
+            border: $input_border;
+        }
+    }
+    .filter-button {
+        width: 154px;
+        margin-left: $margin_btn;
+        height: $button_height;
+        & img {
+            margin-left: 12px;
+        }
+    }
+}
+
+.actions {
+    padding-top: 32px;
+    padding-bottom: 20px;
+    display: flex;
+    padding-left: 20px;
+
+    .action-check {
+        height: $button_height;
+        padding-top: 5px !important;
+    }
+
+    .action-button {
+        height: $button_height;
+        max-width: 116px;
+        width: 100%;
+        margin-left: $margin_btn;
+        & img {
+            position: absolute;
+            margin-left: -24px;
+            margin-top: 14px;
+        }
+    }
+}
+.cards {
+    display: flex;
+    & .card:first-child {
+        margin-bottom: 23px;
+    }
+    & .card:nth-child(2n) {
+        margin-left: 23px;
+    }
+    .card {
+        max-width: 489px;
+        width: 100%;
+        height: 238px;
+        background: $card_background;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 25px 22px 25px 25px;
+        transition: 0.5s;
+        &:hover {
+            transform: scale(1.05);
+        }
+        .card-info {
+            display: flex;
+            flex-direction: column;
+            padding-left: 12px;
+            padding-right: 20px;
+            height: 100%;
+            justify-content: space-between;
+            align-items: stretch;
+
+            .card-info-top {
+                justify-content: space-between;
+                height: 100%;
+                flex: 1;
+                align-items: start;
+
+                .card-info-top-price {
+                    color: $red_color;
+                    font-weight: $font_700;
+                    font-size: $f15;
+                }
+                .card-info-top-point {
+                    display: flex;
+                    height: 26px;
+                    max-width: 104px;
+                    width: 100%;
+                    border: $input_border;
+                    border-radius: 32px;
+                    justify-content: center;
+                    font-size: $f12;
+                    position: relative;
+
+                    .tooltip {
+                        visibility: hidden;
+                        top: 130%;
+                        left: 0%;
+                        margin-left: 15px;
+                        width: 246px;
+                        height: 44px;
+                        line-height: 250%;
+                        font-size: $text_size;
+                        background-color: black;
+                        opacity: 0.55;
+                        color: #fff;
+                        text-align: center;
+                        border-radius: 2px;
+                        padding: 5px 0;
+                        position: absolute;
+                        z-index: 1;
+                        &::after {
+                            border: 10px solid #000;
+                            border-color: transparent transparent black transparent;
+                            content: "";
+                            position: absolute;
+                            left: 10%;
+                            margin-left: -5px;
+                            top: -15%;
+                            transform: translateY(-50%);
+                        }
+                        &:hover:before,
+                        &:hover:after {
+                            display: block;
+                        }
+                    }
+
+                    &:hover .tooltip {
+                        visibility: visible;
+                    }
+
+                    img {
+                        margin-right: 10px;
+                        width: 11px;
+                    }
+                    .card-info-top-point-p {
+                        font-size: $text_size;
+                        margin-top: auto;
+                        margin-bottom: auto !important;
+                    }
+                }
+                .card-info-top-text {
+                    color: $lowtext_color;
+                    font-size: $f14;
+                    height: 100%;
+                    .bold {
+                        font-weight: $font_700;
+                        color: $text_color;
+                    }
+                }
+            }
+            .card-info-middle {
+                display: flex;
+                font-size: $f14;
+                font-size: 14px;
+                flex: 1;
+                align-items: center;
+                margin-top: auto;
+                .card-info-middle-container {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    padding-right: 20px;
+                    border-right: $input_border;
+                    height: 48px;
+
+                    &:last-child {
+                        margin-left: 12px;
+                        border-right: none;
+                    }
+                }
+            }
+            .card-info-bottom {
+                display: flex;
+                margin-top: 16px;
+                font-size: $f14;
+                position: relative;
+                img {
+                    height: 13px;
+                    width: 13px;
+                    margin-right: 8px;
+                    margin-top: 5px;
+                    margin-bottom: 10%;
+                    position: absolute;
+                    left: -20px;
+                }
+            }
+        }
+        .card-media {
+            display: flex;
+            flex-direction: column;
+            padding-left: 10px;
+            position: relative;
+            margin-top: auto;
+            height: 100%;
+            .entity {
+                color: #dd4c5d;
+                background: #ffe4e4;
+            }
+            .individual {
+                color: #0291c1;
+                background: #d6f5ff;
+            }
+            .booked {
+                color: #686868;
+                background: #ededed;
+            }
+            .sold {
+                color: #808080;
+                background: #cccccc;
+            }
+            .card-media-label {
+                font-size: 14px;
+                min-height: 30px;
+
+                position: absolute;
+                right: -22px;
+                line-height: 30px;
+                text-align: end;
+                padding-right: 9px;
+                .card-media-label-p {
+                    padding-left: 9px;
+                    &::before {
+                        content: "\2022";
+                        margin-right: 8px;
+                        font-size: 20px;
+                    }
+                }
+            }
+            .card-media-block {
+                margin-top: auto;
+                text-align: end;
+                width: 132px;
+                img {
+                    margin-bottom: 17px;
+                }
+                .card-media-block-date {
+                    font-size: 13px;
+                    text-align: right;
+                    color: $lowtext_color;
+                }
+            }
+        }
+    }
+}

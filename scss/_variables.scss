@@ -1,0 +1,126 @@
+$background: #f7f6f4;
+$button_height: 38px;
+$text_color: #000;
+$lowtext_color: #9b9b9b;
+$border-color: #c4c4c4;
+$text_size: 13px;
+$margin_btn: 10px;
+$button_height: 38px;
+$input_border: 1px solid #c4c4c4;
+$button_color: #e5e5e5;
+$card_background: #fff;
+$check_color: #fce66f;
+$red_color: #ff0d29;
+$font_700: 700;
+$f15: 15px;
+$f14: 14px;
+$f12: 12px;
+
+@font-face {
+    font-family: "pt_sans";
+    src: url("../fonts/PTSans-Regular.ttf") format("truetype"), url("../fonts/PTSans-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+a.active.focus,
+a.active:focus,
+a.focus,
+a:active.focus,
+a:active:focus,
+a:focus,
+button.active.focus,
+button.active:focus,
+button.focus,
+button:active.focus,
+button:active:focus,
+button:focus,
+select.active.focus,
+select.active:focus,
+select.focus,
+select:active.focus,
+select:active:focus,
+select:focus,
+.btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn:active:focus,
+.btn:focus {
+    outline: 0 !important;
+    outline-color: transparent !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    box-shadow: 0 0 0 0 rgba(0, 123, 255, 0) !important;
+    text-decoration: none;
+}
+a:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "pt_sans";
+    background: $background;
+}
+address {
+    margin-bottom: 0 !important;
+}
+p {
+    margin-bottom: 0 !important;
+}
+input,
+button,
+img {
+    border-radius: 0 !important;
+}
+input:focus {
+    box-shadow: none !important;
+    border-color: $border-color !important;
+}
+.form-control,
+.btn,
+.form-check-label,
+.dropdown-menu {
+    font-size: $text_size;
+}
+.form-check-input {
+    border: $input_border;
+    &:checked {
+        background-color: $check_color;
+        border-color: $border-color !important;
+    }
+    &:checked[type="checkbox"] {
+        background-image: url(../img/check.svg);
+    }
+}
+.dropdown-item:focus,
+.dropdown-item:active,
+.dropdown-item:hover,
+.dropdown-item:checked {
+    background-color: transparent;
+    color: $red_color;
+}
+.button {
+    height: $button_height;
+    width: 100%;
+    border: none;
+    background: $button_color;
+    text-align: left;
+    padding: 9px 12px;
+    font-size: $text_size;
+    &:active {
+        background: $background;
+    }
+}
+.dropdown:hover,
+.dropdown:active {
+    background: $button_color;
+}
+.row {
+    --bs-gutter-x: 0 !important;
+}
